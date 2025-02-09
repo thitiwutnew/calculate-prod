@@ -5,4 +5,4 @@ API:
   API_KEY: "key-dev"
 UI:
   Image: "habor.analytichpxv3.online/kubernetes-workshop/new-ui"
-  ImageTag: "dev-b703814"
+  ImageTag: "v1.0.0"
