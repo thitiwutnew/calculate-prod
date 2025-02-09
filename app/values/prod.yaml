@@ -1,4 +1,4 @@
-ENV: tag
+ENV: prd
 API:
   Image: "habor.analytichpxv3.online/kubernetes-workshop/new-api"
   ImageTag: "dev-f1b53fe"
