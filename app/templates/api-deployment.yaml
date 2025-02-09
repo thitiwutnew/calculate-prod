@@ -1,0 +1,29 @@
+
+{{ $namespace := .Release.Name }}
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: {{ print $namespace "-api" }}
+  name: {{ print $namespace "-api" }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: {{ print $namespace "-api" }}
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: {{ print $namespace "-api" }}
+    spec:
+      containers:
+      - image: {{ .Values.API.Image }}:{{ .Values.API.ImageTag }}
+        name: {{ print $namespace "-api" }}
+        resources: {}
+        envFrom:  
+        - configMapRef:
+            name: api-env
+status: {}
